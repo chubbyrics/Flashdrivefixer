@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: unzip -q RawDriveFixer.zip
+      - run: unzip -q Flashdrivefixer.zip
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -17,8 +17,8 @@ jobs:
           gradle-version: '8.9'
           cache-disabled: true
       - run: gradle assembleDebug --no-daemon
-        working-directory: RawDriveFixer
+        working-directory: Flashdrivefixer 
       - uses: actions/upload-artifact@v4
         with:
-          name: RawDriveFixer-apk
-          path: RawDriveFixer/app/build/outputs/apk/debug/app-debug.apk
+          name: Flashdrivefixer-apk
+          path: Flashdrivefixer/app/build/outputs/apk/debug/app-debug.apk
